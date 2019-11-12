@@ -21,8 +21,8 @@ public class MathTutor {
 		Scanner sc = new Scanner(System.in);
 		
 		//random number generation
-		int firstNumber = (int) (Math.random() * 10) + 1; //first number generation
-		int secondNumber = (int) (Math.random() * 10) + 1; //second number generation
+		double firstNumber = (int) (Math.random() * 10) + 1; //first number generation
+		double secondNumber = (int) (Math.random() * 10) + 1; //second number generation
 		
 		
 		double operator = Math.random() *10; //operator generation
