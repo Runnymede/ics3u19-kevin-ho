@@ -34,8 +34,7 @@ public class DiceRolls {
 				}
 
 
-				if (results == 1)
-					System.out.println(" "); //creates a new line after each set of rolls
+				System.out.println(" "); //creates a new line after each set of rolls
 
 			}
 		}
