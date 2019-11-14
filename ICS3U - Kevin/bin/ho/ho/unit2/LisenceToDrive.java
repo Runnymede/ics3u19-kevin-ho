@@ -1,7 +1,7 @@
 package ho.unit2;
 
 /**LisenceToDrive.java
- * 
+ * LisenceToDrive is a program that tests all the combinations from 0 to 9999 if the sum is 34 or greater.
  * @author Kevin Ho
  *November 14, 2019
  */
