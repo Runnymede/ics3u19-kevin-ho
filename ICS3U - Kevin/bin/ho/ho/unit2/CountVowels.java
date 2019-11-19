@@ -30,8 +30,8 @@ public class CountVowels {
 			
 			char vowel = text.charAt(character); //converts each of the characters into char values
 			
-			if (vowel == 65 || vowel == 69 || vowel == 73 || vowel == 79 || vowel == 85 || vowel == 89 || vowel == 97 || vowel == 101 || vowel == 105 || vowel == 111 || vowel == 117 || vowel == 121) {
-				//checks whether the character is a vowel in lower case or uppercase form
+			if (vowel == 65 || vowel == 69 || vowel == 73 || vowel == 79 || vowel == 85 || vowel == 97 || vowel == 101 || vowel == 105 || vowel == 111 || vowel == 117) {
+				//checks whether the character is a vowel in lower case or upper case form
 				
 				vowelCount += 1; //increases the vowel count by one if the character is a vowel
 			}
