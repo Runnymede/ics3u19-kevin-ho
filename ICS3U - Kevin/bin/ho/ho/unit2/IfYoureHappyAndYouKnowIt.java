@@ -17,7 +17,7 @@ public class IfYoureHappyAndYouKnowIt {
 
 		String[] lyrics = {" clap your hands.", " stomp your feet.", " pat your head.", " tap your nose.", " jump on one foot.", " jump with two feet.", " raise your right arm.", " raise your left arm.", " snap your fingers.", " tap your foot.", " and you really want to show it."};
 
-		int counter2 = 0; //second counter to determine when to separate choruses
+		int counter2 = 0; //second counter to change the "action" part of the lyrics
 
 		for (int counter = 1; counter <= 30; counter++) {
 
