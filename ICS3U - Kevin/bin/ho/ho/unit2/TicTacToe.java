@@ -32,7 +32,20 @@ public class TicTacToe {
 			System.out.println("Now what column?");
 			col = sc.nextInt() -1;
 
+			
+			/**
+			 * The below loop is used so that Player 1 does not enter a row and number in the place of Player 2.
+			 * It repeats until a valid spot is used by Player 1.
+			 */
+			while (tttboard[rows][col] == 'O') {
+				System.out.println("Player 1, please enter a different row: ");
+				rows = sc.nextInt() -1; 
+				System.out.println("Now what column?");
+				col = sc.nextInt() -1;
+			}
+			
 			tttboard[rows][col] = 'X';
+			
 			gameCounter ++; //counts the number of turns
 			if (gameCounter == 9) { //checks if the maximum turns have been reached then prints the board before breaking out of the loop and printing the end message
 				for (int row = 0; row < tttboard.length; row++) {
@@ -43,17 +56,27 @@ public class TicTacToe {
 					break;
 				}
 			}
-
+		
 			//input for player 2
 			System.out.println("Player 2, what row?");
 			rows = sc.nextInt() -1;
 			System.out.println("Now what column?");
 			col = sc.nextInt() -1;
 
+			/**
+			 * The below loop is used so that Player 2 does not enter a row and number in the place of Player 1.
+			 * It repeats until a valid spot is used by Player 2.
+			 */
+			while (tttboard[rows][col] == 'X') {
+				System.out.println("Player 2, please enter a different row: ");
+				rows = sc.nextInt() -1; 
+				System.out.println("Now what column?");
+				col = sc.nextInt() -1;
+			}
+			
 			tttboard[rows][col] = 'O';
+			
 			gameCounter ++; //counts the number of turns
-
-
 			for (int row = 0; row < tttboard.length; row++) {
 				for (int col2 = 0; col2 < tttboard[0].length; col2++) {		//this code prints the board after both the players have entered their moves
 					System.out.print("| " + tttboard[row][col2] + " |");
@@ -61,7 +84,7 @@ public class TicTacToe {
 				System.out.println("\n -------------");
 			}
 
-			//checks if player 1 has won
+			//checks if player 1 has won and breaks if one player won
 			if (tttboard[0][0] == 'X' && tttboard[1][0] == 'X' && tttboard[2][0] == 'X') {
 				System.out.println("Player 1 wins!");
 				break;
@@ -95,7 +118,7 @@ public class TicTacToe {
 				break;
 			}
 			
-			//checks if player 2 has won
+			//checks if player 2 has won and breaks when a player has won
 			if (tttboard[0][0] == 'O' && tttboard[1][0] == 'O' && tttboard[2][0] == 'O') {
 				System.out.println("Player 2 wins!");
 				break;
