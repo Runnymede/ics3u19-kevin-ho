@@ -26,7 +26,7 @@ public class GuessingGame3 {
 		//array
 		String[] guessArray = {"apple", "apricot", "cherry", "cranberry", "durian", "grape", "lime", "lychee", "mango", "watermelon", "melon", "olive", "orange", "papaya", "passion fruit", "pear", "peach", "pineapple", "plum", "pomegranate"};
 		
-		for (int counter = 0; counter < guessArray.length; counter++) {
+		for (int counter = 0; counter < guessArray.length; counter++) { //runs until the maximum number of choices are reached
 			
 			System.out.println("Is it a " + guessArray[arrayCounter] + "?");
 			String answer = sc.next();
@@ -36,7 +36,7 @@ public class GuessingGame3 {
 				break;
 			}
 			
-			arrayCounter = (int)(Math.random() *20 );
+			arrayCounter = (int)(Math.random() *20 ); //picks a random number for the array
 		}
 		sc.close();
 	}
