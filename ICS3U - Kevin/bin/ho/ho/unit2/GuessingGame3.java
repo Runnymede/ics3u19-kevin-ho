@@ -19,7 +19,8 @@ public class GuessingGame3 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Think of a fruit.");
+		System.out.println("Think of a fruit and press a key when you're ready.");
+		String start = sc.next();
 		
 		//variables
 		int arrayCounter = 0;
