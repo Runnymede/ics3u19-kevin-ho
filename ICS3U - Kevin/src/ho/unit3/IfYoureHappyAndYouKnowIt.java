@@ -1,7 +1,7 @@
-package ho.unit2;
+package ho.unit3;
 
 /**IfYoureHappyAndYouKnowIt.java
- * IfYoureHappyAndYouKnowIt.java is a  program that prints out the lyrics to ‚Äúif you‚Äôre happy and you know it‚Äù with 10 verses.
+ * IfYoureHappyAndYouKnowIt.java is a  program that prints out the lyrics to ìif youíre happy and you know itî with 10 verses.
  * @author Kevin Ho
  *
  */

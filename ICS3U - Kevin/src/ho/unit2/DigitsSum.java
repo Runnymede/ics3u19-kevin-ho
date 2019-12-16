@@ -22,8 +22,8 @@ public class DigitsSum {
 		System.out.println("Enter a positive 3-digit number: ");
 
 		int integer = sc.nextInt();
-		int division = 100;
-		int mod = 1000;
+		int division = 100; // starts at the third digit then decreases in each numbers place
+		int mod = 1000; //
 		int digits = integer%mod/division;
 		int total = 0;
 

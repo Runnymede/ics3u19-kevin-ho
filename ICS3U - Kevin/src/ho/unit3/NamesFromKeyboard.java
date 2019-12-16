@@ -1,4 +1,4 @@
-package ho.unit2;
+package ho.unit3;
 
 /**NamesFromKeyboard.java
  * NamesFromKeyboard.java reads in a list of names from the keyboard, and then outputs the list twice, first in the order that it was input, and then in reverse order. 

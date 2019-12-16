@@ -1,4 +1,4 @@
-package ho.unit2;
+package ho.unit3;
 
 /**TicTacToe.java
  * TicTacToe.java is a tictactoe game using two-dimensional arrays.

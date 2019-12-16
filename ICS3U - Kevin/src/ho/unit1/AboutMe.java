@@ -1,8 +1,8 @@
 package ho.unit1;
 /**
- * AboutMe.java
+ * AboutMe.java <br?
  * This is a small program displays my first name and last name initial, my teacher's name, and school name on three separate lines.
- * Below the personal information is a phrase related to my school team.
+ * Below the personal information is a phrase related to my school team. <br>
  * September 18, 2019
  * @author Kevin Ho
  */

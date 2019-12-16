@@ -1,4 +1,4 @@
-package ho.unit2;
+package ho.unit3;
 
 /**GuessingGame3.java
  * GuessingGame3.java is a program that plays a guessing game with the user. It has an array with at least 20 different items, and then should start randomly guessing from the list until it gets it right.
