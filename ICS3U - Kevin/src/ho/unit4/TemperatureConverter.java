@@ -40,7 +40,7 @@ public class TemperatureConverter {
 
 			System.out.println(fInput + " degrees Fahrenheit is " + finalAnswer + " degrees Celcius.");
 		}
-
+		sc.close();
 	}
 
 	public static double celciusToFahrenheit (double inputC) {
