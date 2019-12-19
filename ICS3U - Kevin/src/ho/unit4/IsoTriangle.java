@@ -19,25 +19,29 @@ public class IsoTriangle {
 		int size = sc.nextInt();
 
 		drawStars(size);
-
+		
 	}
 
 	public static void drawStars(int stars) {
 
-		int counter2 = 0;
-
-		for (int counter = 1; counter <= stars; counter++) {
-			if (counter <= stars) {
-				System.out.print("*");
-				counter2 +=2;
-			}
+		int starTotal = stars * stars;
+		int starCounter = 0;
+		while (starCounter < starTotal) {
+			System.out.print("*");
+			starCounter ++;
+			if (starCounter == 1)
+				System.out.println(" ");
+			drawSpaces(starCounter);
 		}
-
 	}
-
 	public static void drawSpaces(int spaces) {
-
-
+		
+		int starCounter3 = spaces;
+		
+		if (starCounter3 %2 != 0)
+			System.out.println(" ");			
+		}
+		
 	}
 
-}
+

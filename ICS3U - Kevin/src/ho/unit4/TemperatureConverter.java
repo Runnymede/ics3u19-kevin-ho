@@ -45,14 +45,14 @@ public class TemperatureConverter {
 
 	public static double celciusToFahrenheit (double inputC) {
 
-		double resultC = (inputC * 9 / 5) + 32;
+		double resultC = (inputC * 9 / 5) + 32; //formula
 
 		return resultC;
 	}
-	
+
 	public static double FahrenheitToCelcius (double inputF) {
 		
-		double resultF = (inputF - 32) * 5 / 9;
+		double resultF = (inputF - 32) * 5 / 9; //formula
 		
 		return resultF;
 	}
