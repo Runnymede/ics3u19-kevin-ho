@@ -38,7 +38,11 @@ public class MathPlus {
 		System.out.println("The average of the integers is: " + average2(mainArray2));
 	}
 
-	//min
+	/**
+	 * This method takes integers from the mainArray and determines the first occurrance of the smallest number of the array.
+	 * @param mainArray - the integer array
+	 * @return The index or position of the first occurrance of the smallest number of the array.
+	 */
 	public static int min(int[] mainArray) {
 		int min1 = 0;
 		for(int lessThan = 1; lessThan < mainArray.length; lessThan ++) {
@@ -50,7 +54,11 @@ public class MathPlus {
 		return min1;
 	}
 
-	//max
+	/**
+	 * This method takes integers from the mainArray and determines the first occurrance of the biggest number of the array.
+	 * @param mainArray - the integer array
+	 * @return The index or position of the first occurrance of the biggest number of the array.
+	 */
 	public static int max(int[] mainArray) {
 		int max1 = 0;
 		for(int greaterThan = 1; greaterThan < mainArray.length; greaterThan ++) {
@@ -62,7 +70,11 @@ public class MathPlus {
 		return max1;
 	}
 
-	//sum
+	/**
+	 * This method takes integers from the mainArray and determines the total sum of all the integers.
+	 * @param mainArray - the integer array
+	 * @return The total sum of the integers.
+	 */
 	public static int sum(int[] mainArray) {
 		int sum = 0;
 		for (int counter = 0; counter < mainArray.length; counter ++) {
@@ -71,7 +83,11 @@ public class MathPlus {
 		return sum;
 	}
 
-	//average
+	/**
+	 * This method takes integers from the mainArray and determines the average of the integers.
+	 * @param mainArray - the integer array
+	 * @return The double value of the average.
+	 */
 	public static double average(int[] mainArray) {
 		double average = 0;
 		for (int counter = 0; counter < mainArray.length; counter ++) {
@@ -80,7 +96,11 @@ public class MathPlus {
 		return (average / mainArray.length);
 	}
 
-	//min2
+	/**
+	 * This method takes double values from mainArray2 and determines the first occurrance of the smallest number of the array.
+	 * @param mainArray2 - the double array
+	 * @return The index or position of the first occurrance of the smallest number of the array.
+	 */
 	public static int min2(double[] mainArray2) {
 		int min2 = 0;
 		for(int lessThan = 1; lessThan < mainArray2.length; lessThan ++) {
@@ -92,7 +112,11 @@ public class MathPlus {
 		return (int) min2;
 	}
 
-	//max2
+	/**
+	 * This method takes double values from mainArray2 and determines the first occurrance of the biggest number of the array.
+	 * @param mainArray2 - the double array
+	 * @return The index or position of the first occurrance of the biggest number of the array.
+	 */
 	public static int max2(double[] mainArray2) {
 		int max2 = 0;
 		for(int greaterThan = 1; greaterThan < mainArray2.length; greaterThan ++) {
@@ -104,7 +128,11 @@ public class MathPlus {
 		return max2;
 	}
 
-	//sum2
+	/**
+	 * This method takes doubles from the mainArray2 and determines the total sum of all the double values.
+	 * @param mainArray2 - the double array
+	 * @return The total sum of the doubles.
+	 */
 	public static double sum2(double[] mainArray2) {
 		int sum2 = 0;
 		for (int counter = 0; counter < mainArray2.length; counter ++) {
@@ -113,7 +141,11 @@ public class MathPlus {
 		return sum2;
 	}
 
-	//average2
+	/**
+	 * This method takes doubles from the mainArray2 and determines the average of the double values.
+	 * @param mainArray2 - the double array
+	 * @return The double value for the average.
+	 */
 	public static double average2(double[] mainArray2) {
 		double average2 = 0;
 		for (int counter = 0; counter < mainArray2.length; counter ++) {
