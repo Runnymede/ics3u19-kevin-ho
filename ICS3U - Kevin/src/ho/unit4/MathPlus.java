@@ -36,6 +36,9 @@ public class MathPlus {
 
 		//average
 		System.out.println("The average of the integers is: " + average2(mainArray2));
+
+		//median
+		System.out.println("The median of the integers is: " + median(mainArray2));
 	}
 
 	/**
@@ -153,4 +156,34 @@ public class MathPlus {
 		}
 		return (average2 / mainArray2.length);
 	}
+
+
+	public static double median(double[] mainArray2) {
+		int min2 = 0;
+		for(int lessThan = 1; lessThan < mainArray2.length; lessThan ++) {
+
+			if(mainArray2[lessThan]<mainArray2[min2]) {
+				min2 = lessThan;
+			}
+		}
+		double replacement = mainArray2[0];
+		mainArray2[0] = mainArray2[min2];
+		mainArray2[min2] = replacement;
+
+		int max2 = 0;
+		for(int greaterThan = 1; greaterThan < mainArray2.length; greaterThan ++) {
+
+			if(mainArray2[greaterThan]>mainArray2[max2]) {
+				max2 = greaterThan;
+			}
+		}
+		double replacement2 = mainArray2.length -1;
+		mainArray2[mainArray2.length -1] = mainArray2[max2];
+		mainArray2[max2] = replacement;
+		
+		if (mainArray2[2] > mainArray2[1] && mainArray2[3] > mainArray2[2]) {
+			
+		}
+	}
+
 }
