@@ -11,7 +11,7 @@ public class MathPlus {
 	public static void main(String[] args) {
 
 		int[] mainArray = {15,2,7,4,1};
-		double[] mainArray2 = {15,2,7,4,1};
+		double[] mainArray2 = {15,2,2,2,1,};
 
 		//min 
 		System.out.println("Index of the first smallest number: " + min(mainArray));
@@ -39,6 +39,9 @@ public class MathPlus {
 
 		//median
 		System.out.println("The median of the integers is: " + median(mainArray2));
+		
+		//mode
+		System.out.println("The mode of the integers is: " + mode(mainArray2));
 	}
 
 	/**
@@ -157,8 +160,13 @@ public class MathPlus {
 		return (average2 / mainArray2.length);
 	}
 
-
+	/**
+	 * This method finds the median of the array by first finding the smallest and biggest number and arranging them in their appropriate spot before arranging the rest of the numbers in the array and finding the median.
+	 * @param mainArray2
+	 * @return
+	 */
 	public static double median(double[] mainArray2) {
+		//finds the smallest number and moves it to the end of the array
 		int min2 = 0;
 		for(int lessThan = 1; lessThan < mainArray2.length; lessThan ++) {
 
@@ -170,6 +178,7 @@ public class MathPlus {
 		mainArray2[0] = mainArray2[min2];
 		mainArray2[min2] = replacement;
 
+		//finds the biggest number and moves it to the end of the array
 		int max2 = 0;
 		for(int greaterThan = 1; greaterThan < mainArray2.length; greaterThan ++) {
 
@@ -180,10 +189,36 @@ public class MathPlus {
 		double replacement2 = mainArray2.length -1;
 		mainArray2[mainArray2.length -1] = mainArray2[max2];
 		mainArray2[max2] = replacement;
-		
-		if (mainArray2[2] > mainArray2[1] && mainArray2[3] > mainArray2[2]) {
-			
+
+		//arranges the values from smallest to largest
+		for(int counter = 1; counter < mainArray2.length -1; counter++) {
+			if (mainArray2[counter + 1] < mainArray2[counter]) {
+				double mover = mainArray2[counter +1];
+				mainArray2[counter + 1] = mainArray2[counter];
+				mainArray2[counter] = mover;
+			} 
+		}
+
+		//determines the median of the array
+		if (mainArray2.length%2 == 0) {
+			double median = (mainArray2[mainArray2.length /2 - 1] + mainArray2[mainArray2.length /2]) / 2;
+			return median;
+		}
+		else {
+			double median = mainArray2[mainArray2.length % 2 + 1];
+			return median;
 		}
 	}
 
+	public static double mode(double[] mainArray2) {
+		
+		double[] data = new double[mainArray2.length];
+		
+		for(int counter2 = 0; counter2 < (mainArray2.length) -1; counter2++) {
+			if (mainArray2[1] == mainArray2[counter2] && counter2 != mainArray2[1]) {
+				data [1] += 1;
+			}
+		}
+		
+	}
 }
