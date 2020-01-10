@@ -47,6 +47,9 @@ public class MathPlus {
 
 		//prime
 		System.out.println("The number is prime: " + prime(mainArray));
+		
+		//factorial
+		System.out.println("The factorial of the number is: " + factorial(mainArray));
 	}
 
 	/**
@@ -284,5 +287,23 @@ public class MathPlus {
 			prime = true;
 
 		return prime;
+	}
+	
+	
+	public static long factorial(int[] mainArray) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		//input
+		System.out.println("Enter an integer: ");
+		int integer = sc.nextInt();
+		
+		//variables
+		long factorial = 0;
+		
+		for(int counter = integer; counter != 0; counter--) {
+			factorial = counter * (counter - 1);
+		}
+		return factorial;
 	}
 }
