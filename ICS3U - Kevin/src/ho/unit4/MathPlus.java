@@ -6,6 +6,8 @@ package ho.unit4;
  *
  */
 
+import java.util.Scanner;
+
 public class MathPlus {
 
 	public static void main(String[] args) {
@@ -42,6 +44,9 @@ public class MathPlus {
 
 		//mode
 		System.out.println("The mode of the integers is: " + mode(mainArray2));
+
+		//prime
+		System.out.println("The number is prime: " + prime(mainArray));
 	}
 
 	/**
@@ -226,7 +231,7 @@ public class MathPlus {
 				}
 			}
 		}
-		
+
 		//determines the largest tally of the integers in the data array
 		int max3 = 0;
 		for(int greaterThan = 1; greaterThan < data.length; greaterThan ++) {
@@ -236,5 +241,48 @@ public class MathPlus {
 			}
 		}
 		return mainArray2[max3];
+	}
+
+	/**
+	 * This method uses a boolean value and checks if the integer the user inputs is prime.
+	 * @param mainArray - Integer array.
+	 * @return - A boolean value.
+	 */
+	public static boolean prime(int[] mainArray) {
+
+		Scanner sc = new Scanner(System.in);
+
+		//input
+		System.out.println("Enter one positive integer: ");
+		int input1 = sc.nextInt();
+
+		//variables
+		int div = 2;
+		int adder = 1;
+		int result1;
+		int result2;
+		boolean prime;
+
+		//calculates if the number is a prime number
+		do {
+
+			result1 = input1 % div;
+			div ++; //counter for the divider
+
+			if (result1 == 0 && div != input1 + 1)
+				break;
+
+			else
+				result1 = 1;
+
+		} while (div < input1);
+
+		if (result1 == 0) 
+			prime = false;
+
+		else
+			prime = true;
+
+		return prime;
 	}
 }
