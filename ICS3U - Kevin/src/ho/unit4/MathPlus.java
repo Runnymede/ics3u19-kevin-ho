@@ -6,12 +6,14 @@ package ho.unit4;
  *
  */
 
+import java.util.Scanner;
+
 public class MathPlus {
 
 	public static void main(String[] args) {
 
-		int[] mainArray = {15,2,7,4,1};
-		double[] mainArray2 = {15,2,2,2,1,};
+		int[] mainArray = {15,2,7,4,1,2,6};
+		double[] mainArray2 = {15,2,7,4,1,2,6};
 
 		//min 
 		System.out.println("Index of the first smallest number: " + min(mainArray));
@@ -39,9 +41,18 @@ public class MathPlus {
 
 		//median
 		System.out.println("The median of the integers is: " + median(mainArray2));
-		
+
 		//mode
 		System.out.println("The mode of the integers is: " + mode(mainArray2));
+
+		//prime
+		System.out.println("The number is prime: " + prime(mainArray));
+
+		//factorial
+		System.out.println("The factorial of the number is: " + factorial(mainArray));
+		
+		//numOfFactors
+		System.out.println("The number of factors is: " + numOfFactors(mainArray));
 	}
 
 	/**
@@ -162,8 +173,8 @@ public class MathPlus {
 
 	/**
 	 * This method finds the median of the array by first finding the smallest and biggest number and arranging them in their appropriate spot before arranging the rest of the numbers in the array and finding the median.
-	 * @param mainArray2
-	 * @return
+	 * @param mainArray2 - the double array
+	 * @return The mode.
 	 */
 	public static double median(double[] mainArray2) {
 		//finds the smallest number and moves it to the end of the array
@@ -210,15 +221,118 @@ public class MathPlus {
 		}
 	}
 
+	/**
+	 * This method determines the mode of the array and returns it in a double value.
+	 * @param mainArray2 - the double array
+	 * @return The mode.
+	 */
 	public static double mode(double[] mainArray2) {
-		
-		double[] data = new double[mainArray2.length];
-		
-		for(int counter2 = 0; counter2 < (mainArray2.length) -1; counter2++) {
-			if (mainArray2[1] == mainArray2[counter2] && counter2 != mainArray2[1]) {
-				data [1] += 1;
+
+		double[] data = new double[mainArray2.length]; //creates a new array for storage of how many times each number appears in the mainArray2
+
+		for(int counter1 = 0; counter1 < mainArray2.length -1; counter1++) { //this code from 230-233 counts how many times each number appears
+			for(int counter2 = 0; counter2 < mainArray2.length -1; counter2++) {
+				if (mainArray2[counter1] == mainArray2[counter2] && counter2 != counter1) {
+					data [counter1] += 1;
+				}
 			}
 		}
+
+		//determines the largest tally of the integers in the data array
+		int max3 = 0;
+		for(int greaterThan = 1; greaterThan < data.length; greaterThan ++) {
+
+			if(data[greaterThan]>data[max3]) {
+				max3 = greaterThan;
+			}
+		}
+		return mainArray2[max3];
+	}
+
+	/**
+	 * This method uses a boolean value and checks if the integer the user inputs is prime.
+	 * @param mainArray - Integer array.
+	 * @return - A boolean value.
+	 */
+	public static boolean prime(int[] mainArray) {
+
+		Scanner sc = new Scanner(System.in);
+
+		//input
+		System.out.println("Enter one positive integer: ");
+		int input1 = sc.nextInt();
+
+		//variables
+		int div = 2;
+		int result1;
+		boolean prime;
+
+		//calculates if the number is a prime number
+		do {
+
+			result1 = input1 % div;
+			div ++; //counter for the divider
+
+			if (result1 == 0 && div != input1 + 1)
+				break;
+
+			else
+				result1 = 1;
+
+		} while (div < input1);
+
+		if (result1 == 0) 
+			prime = false;
+
+		else
+			prime = true;
+
+		return prime;
+	}
+
+	/**
+	 * This method finds the factorial of the number the user inputs.
+	 * @param mainArray - Integer array.
+	 * @return - A long value of the factorial.
+	 */
+	public static long factorial(int[] mainArray) {
+
+		Scanner sc = new Scanner(System.in);
+
+		//input
+		System.out.println("Enter an integer: ");
+		int integer = sc.nextInt();
+
+		//variables
+		long factorialData = integer * (integer - 1);
+
+		//loop to determine the factorial
+		for(int counter = integer - 2; counter != 1; counter--) {
+			factorialData = factorialData * counter;
+		}
+		return factorialData;
+	}
+	
+	/**
+	 * This method finds the total number of factors the given number has.
+	 * @param mainArray - The integer array.
+	 * @return - An int value of the total factor amount.
+	 */
+	public static int numOfFactors(int[] mainArray) {
 		
+		Scanner sc = new Scanner(System.in);
+		
+		//input
+		System.out.println("Enter a positive integer: ");
+		int integer = sc.nextInt();
+		
+		//variables
+		int tally = 0;
+		
+		for (int counter = 1; counter < integer / 2; counter ++) {
+			if(integer % counter == 0) 
+				tally ++;
+		}
+		return tally + 2;
 	}
 }
