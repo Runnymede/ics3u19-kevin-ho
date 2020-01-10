@@ -10,8 +10,8 @@ public class MathPlus {
 
 	public static void main(String[] args) {
 
-		int[] mainArray = {15,2,7,4,1};
-		double[] mainArray2 = {15,2,2,2,1,};
+		int[] mainArray = {15,2,7,4,1,2,6};
+		double[] mainArray2 = {15,2,7,4,1,2,6};
 
 		//min 
 		System.out.println("Index of the first smallest number: " + min(mainArray));
@@ -39,7 +39,7 @@ public class MathPlus {
 
 		//median
 		System.out.println("The median of the integers is: " + median(mainArray2));
-		
+
 		//mode
 		System.out.println("The mode of the integers is: " + mode(mainArray2));
 	}
@@ -162,8 +162,8 @@ public class MathPlus {
 
 	/**
 	 * This method finds the median of the array by first finding the smallest and biggest number and arranging them in their appropriate spot before arranging the rest of the numbers in the array and finding the median.
-	 * @param mainArray2
-	 * @return
+	 * @param mainArray2 - the double array
+	 * @return The mode.
 	 */
 	public static double median(double[] mainArray2) {
 		//finds the smallest number and moves it to the end of the array
@@ -210,15 +210,31 @@ public class MathPlus {
 		}
 	}
 
+	/**
+	 * This method determines the mode of the array and returns it in a double value.
+	 * @param mainArray2 - the double array
+	 * @return The mode.
+	 */
 	public static double mode(double[] mainArray2) {
-		
-		double[] data = new double[mainArray2.length];
-		
-		for(int counter2 = 0; counter2 < (mainArray2.length) -1; counter2++) {
-			if (mainArray2[1] == mainArray2[counter2] && counter2 != mainArray2[1]) {
-				data [1] += 1;
+
+		double[] data = new double[mainArray2.length]; //creates a new array for storage of how many times each number appears in the mainArray2
+
+		for(int counter1 = 0; counter1 < mainArray2.length -1; counter1++) { //this code from 222-225 counts how many times each number appears
+			for(int counter2 = 0; counter2 < mainArray2.length -1; counter2++) {
+				if (mainArray2[counter1] == mainArray2[counter2] && counter2 != counter1) {
+					data [counter1] += 1;
+				}
 			}
 		}
 		
+		//determines the largest tally of the integers in the data array
+		int max3 = 0;
+		for(int greaterThan = 1; greaterThan < data.length; greaterThan ++) {
+
+			if(data[greaterThan]>data[max3]) {
+				max3 = greaterThan;
+			}
+		}
+		return mainArray2[max3];
 	}
 }
