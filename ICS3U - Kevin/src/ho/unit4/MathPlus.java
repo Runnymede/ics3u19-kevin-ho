@@ -50,7 +50,7 @@ public class MathPlus {
 
 		//factorial
 		System.out.println("The factorial of the number is: " + factorial(mainArray));
-		
+
 		//numOfFactors
 		System.out.println("The number of factors is: " + numOfFactors(mainArray));
 	}
@@ -312,27 +312,28 @@ public class MathPlus {
 		}
 		return factorialData;
 	}
-	
+
 	/**
 	 * This method finds the total number of factors the given number has.
 	 * @param mainArray - The integer array.
 	 * @return - An int value of the total factor amount.
 	 */
 	public static int numOfFactors(int[] mainArray) {
-		
+
 		Scanner sc = new Scanner(System.in);
-		
+
 		//input
 		System.out.println("Enter a positive integer: ");
 		int integer = sc.nextInt();
-		
+
 		//variables
 		int tally = 0;
-		
+
 		for (int counter = 1; counter < integer / 2; counter ++) {
 			if(integer % counter == 0) 
 				tally ++;
 		}
 		return tally + 2;
+
 	}
 }
