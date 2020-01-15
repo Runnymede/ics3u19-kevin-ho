@@ -7,26 +7,30 @@ package DesignDoc;
  */
 
 import java.util.Scanner;
+import java.awt.*;
+import hsa_new.Console;
 
 public class KevinFinalProject {
+
+	static Console c = new Console();
 
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
 
+
 		boolean playAgain;
-		boolean playAgain2;
+		boolean playAgain2 = true;
+		boolean win = true;
 
 		do {
 			//input
-			System.out.println("Would you like to play against the computer or another player?");
-			String answer = sc.next();
+			c.println("Would you like to play against the computer or another player?");
+			String answer = c.readString();
 
-			System.out.println("How many rounds do you want to go up to?");
-			int rounds = sc.nextInt();
+			c.println("How many rounds do you want to go up to?");
+			int rounds = c.readInt();
 
-			//variables
-			boolean win = true;
 
 			if(answer.equalsIgnoreCase("computer"))
 				playerVsAI(win);
@@ -38,23 +42,124 @@ public class KevinFinalProject {
 			else if(answer.equalsIgnoreCase("player"))
 				playerVsPlayer(win);
 
-			else
-				System.out.println("Invalid input.");
-
 			if(win == true)
-				System.out.println("Player 1 wins!");
+				c.println("Player 1 wins!");
 			else
-				System.out.println("Player 2 wins!");
+				c.println("Player 2 wins!");
 
-			System.out.println("Would you like to play again?");
-			String playAgain1 = sc.next();
+			c.println("Would you like to play again?");
+			String playAgain1 = c.readString();
 
 			if(playAgain1.equalsIgnoreCase("yes"))
 				playAgain2 = true;
 			else 
-				break;
+				c.close();
 
-		} while (playAgain2 == true);
+		} while (playAgain2 == true);	
+	}
+
+	public static boolean playerVsAI(boolean win) {
+
+		//variables
+		String playerOneMove;
+		String computerMove = "random";
+		int playerOnePoints;
+		int computerPoints;
+
+		//input(player move selection)
+		c.println("Player 1, what is your move? Shoot, reload, or block?");
+		playerOneMove = c.readString();
+
+		//input(computer move selection)
+		random(computerMove);
+
+		c.clear();
+
+
+		return false;
+	}
+
+	public static boolean playerVsPlayer(boolean win) {
+
+		//variables
+		String playerOneMove;
+		String playerTwoMove;
+		int playerOnePoints = 0;
+		int playerTwoPoints = 0;
+
+		//input(player 1 move selection)
+		c.println("Player 1, what is your move? Shoot, reload, or block?");
+		playerOneMove = c.readString();
+
+		//input(player 2  move selection)
+		c.println("Player 2, what is your move? Shoot, reload, or block?");
+		playerTwoMove = c.readString();
+
+		c.clear();
+
+		if (playerOneMove.equalsIgnoreCase("shoot") && playerTwoMove.equalsIgnoreCase("shoot")) {
+			shootShoot(playerOneMove, playerTwoMove);
+			playerOnePoints = 
+		}
+		return false;
+	}
+
+	public static String random(String computerMove) {
+
+		int randomInteger =  (int) (Math.random() * 3) + 1;
+
+		if(randomInteger == 1) 
+			computerMove = "shoot";
+		else if(randomInteger == 2)
+			computerMove = "reload";
+		else if(randomInteger == 3)
+			computerMove = "block";
+
+		return computerMove;
+	}
+
+	public static int shootShoot(String playerOneMove, String playerTwoMove) {
+
+		//display image for first player
+
+
+		//display image for second player
+		return 4;
+	}
+
+	public static void shootBlock() {
+		//display image for first player
+
+
+		//display image for second player
+	}
+
+	public static void shootReload() {
+		//display image for first player
+
+
+		//display image for second player
+	}
+
+	public static void reloadReload() {
+		//display image for first player
+
+
+		//display image for second player
+	}
+
+	public static void reloadBlock() {
+		//display image for first player
+
+
+		//display image for second player
+	}
+
+	public static void blockBlock() {
+		//display image for first player
+
+
+		//display image for second player
 	}
 }
 
