@@ -132,15 +132,22 @@ public class KevinFinalProject {
 			//input(player 1 move selection)
 			do {
 
-				c.println("Player 1, what is your move? Shoot, reload, or  block?");
-				playerOneMove = c.readString();
-				if(playerOneMove.equalsIgnoreCase("shoot") && playerOneBullets == 0) 
-					c.println("Player 1 you are out of bullets!");
+				do {
 
-			} while (playerOneMove.equalsIgnoreCase("shoot") && playerOneBullets == 0);
+					c.println("Player 1, what is your move? Shoot, reload, or  block?");
+					playerOneMove = c.readString();
+					if(playerOneMove.equalsIgnoreCase("shoot") && playerOneBullets == 0) 
+						c.println("Player 1 you are out of bullets!");
+
+					if(!((playerOneMove.equalsIgnoreCase("shoot") || playerOneMove.equalsIgnoreCase("block") || playerOneMove.equalsIgnoreCase("reload"))))
+						c.println("Invalid input, please enter a valid move.");
+
+				} while (playerOneMove.equalsIgnoreCase("shoot") && playerOneBullets == 0);
+
+			} while (!(playerOneMove.equalsIgnoreCase("shoot") || playerOneMove.equalsIgnoreCase("block") || playerOneMove.equalsIgnoreCase("reload")));
 
 			/*A do while loop is used to ensure that player 1 and player 2/computer don't pick "shoot" when he/she has 0 bullets in their
-			  firearm.*/
+			  firearm. Another one is used to ensure that neither player inputs an invalid move.*/
 
 			//input computer(player 2) move selection
 			do {
@@ -204,15 +211,22 @@ public class KevinFinalProject {
 			//input(player 1 move selection)
 			do {
 
-				c.println("Player 1, what is your move? Shoot, reload, or  block?");
-				playerOneMove = c.readString();
-				if(playerOneMove.equalsIgnoreCase("shoot") && playerOneBullets == 0) 
-					c.println("Player 1 you are out of bullets!");
+				do {
 
-			} while (playerOneMove.equalsIgnoreCase("shoot") && playerOneBullets == 0);
+					c.println("Player 1, what is your move? Shoot, reload, or  block?");
+					playerOneMove = c.readString();
+					if(playerOneMove.equalsIgnoreCase("shoot") && playerOneBullets == 0) 
+						c.println("Player 1 you are out of bullets!");
+
+					if(!((playerOneMove.equalsIgnoreCase("shoot") || playerOneMove.equalsIgnoreCase("block") || playerOneMove.equalsIgnoreCase("reload"))))
+						c.println("Invalid input, please enter a valid move.");
+
+				} while (playerOneMove.equalsIgnoreCase("shoot") && playerOneBullets == 0);
+
+			} while (!(playerOneMove.equalsIgnoreCase("shoot") || playerOneMove.equalsIgnoreCase("block") || playerOneMove.equalsIgnoreCase("reload")));
 
 			/*A do while loop is used to ensure that player 1 and player 2/computer don't pick "shoot" when he/she has 0 bullets in their
-			  firearm.*/
+			  firearm. Another one is used to ensure that neither player inputs an invalid move.*/
 
 			//resets the screen to ensure other players can't see each other's moves
 			c.clear();
@@ -220,13 +234,18 @@ public class KevinFinalProject {
 
 			//input(player 2  move selection)
 			do {
+				do {
 
-				c.println("Player 2, what is your move? Shoot, reload, or block?");
-				playerTwoMove = c.readString();
-				if(playerTwoMove.equalsIgnoreCase("shoot") && playerTwoBullets == 0) 
-					c.println("Player 2 you are out of bullets!");
+					c.println("Player 2, what is your move? Shoot, reload, or block?");
+					playerTwoMove = c.readString();
+					if(playerTwoMove.equalsIgnoreCase("shoot") && playerTwoBullets == 0) 
+						c.println("Player 2 you are out of bullets!");
 
-			} while (playerTwoMove.equalsIgnoreCase("shoot") && playerTwoBullets == 0);
+					if(!((playerTwoMove.equalsIgnoreCase("shoot") || playerTwoMove.equalsIgnoreCase("block") || playerTwoMove.equalsIgnoreCase("reload"))))
+						c.println("Invalid input, please enter a valid move.");
+
+				} while (playerTwoMove.equalsIgnoreCase("shoot") && playerTwoBullets == 0);
+			} while (!(playerTwoMove.equalsIgnoreCase("shoot") || playerTwoMove.equalsIgnoreCase("block") || playerTwoMove.equalsIgnoreCase("reload")));
 
 			c.clear();
 
@@ -494,4 +513,3 @@ public class KevinFinalProject {
 		c.println("Player 1 and Player 2 both blocked!");
 		f();
 	}
-}
